@@ -1,9 +1,14 @@
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 10px;
   overflow: hidden;
   background-color: white;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-width: 1px;
+    border-bottom-width: 1px;
+    
 }
 
 li {
@@ -30,4 +35,19 @@ li a:hover{
 
 #activePage{
     background-color: aqua;
+}
+
+#formTable{
+    margin-left: 200px;
+    text-align: right;
+}
+
+#table{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-bottom: 40px;    
+}
+
+.form-group{
+    padding: 2px;
 }
