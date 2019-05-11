@@ -1,0 +1,33 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+li {
+  float: left;
+    color: black;
+    width: 120px;
+}
+
+li a {
+  display: block;
+  color: black;
+  border-style: solid;
+  border-width: 1px;
+  margin: 5px;
+  text-align: center;
+  padding: 7px 10px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+li a:hover{
+    background-color: antiquewhite;
+}
+
+#activePage{
+    background-color: aqua;
+}
