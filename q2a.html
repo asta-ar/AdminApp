@@ -13,14 +13,20 @@
          <img src="oulogo.png" alt="OU logo" width="100" height="77">
          <h2>OU Walking Club</h2>
          <p>Admin Application</p>
+         
+         <div align="right" id="top">
+         <a href="url">Contact the OU</a>
+         <input type="submit" value="Sign Out" style="width: 100px">     
+         </div>
+         
      </header>
      <ul>
          <li><a href="">Home</a></li> 
-         <li><a href="addWalkPage.html" id="activePage">Walk events</a></li>
-         <li><a href="/social/">Social events</a></li>
-         <li><a href="/memberships/">Memberships</a></li>
-         <li><a href="/announcements/">Announcements</a></li>
-         <li><a href="/news/">News</a></li>
+         <li><a href="q2a.html" id="activePage">Walk events</a></li>
+         <li><a href="">Social events</a></li>
+         <li><a href="">Memberships</a></li>
+         <li><a href="">Announcements</a></li>
+         <li><a href="">News</a></li>
      </ul>
      
 <div id="table">
@@ -30,52 +36,76 @@
             <tr><td>
     <div class="form-group">
      <label for="name">Name *</label><td>
-     <input id="name" name="name" type="text">
+     <input id="name" style="width: 200px" name="name" type="text">
     </div>
                 </td></tr>
     <tr><td>
     <div class="form-group">
      <label for="date">Date *</label><td>
-     <input id="date" name="date" type="date">
+     <input id="date" name="date" style="width: 200px" type="date">
     </div>
       </td></tr>
        <tr><td>
     <div class="form-group">
      <label for="time">Time *</label><td>
-     <input id="time" name="time" type="time">
+     <input id="time" name="time" style="width: 200px" type="time">
     </div>
           </td></tr>
        <tr><td>
     <div class="form-group">
      <label for="point">Meeting point *</label><td>
-     <input id="point" name="point" type="text">
+     <input id="point" name="point" style="width: 200px" type="text">
     </div>
         </td></tr>
        <tr><td>
     <div class="form-group">
      <label for="distance">Distance (miles)</label><td>
-     <input id="distance" name="distance" type="number">
+     <input id="distance" name="distance" style="width: 200px" type="number">
     </div> 
          </td></tr>
        <tr><td>
     <div class="form-group">
      <label for="notes">Notes</label><td>
-     <input id="notes" name="distance" type="notes">
+     <input id="notes" name="notes" style="width: 300px" type="text">
     </div> 
     </td></tr>
-       <tr><td>
-    
+        
+       <tr><td>   
+    <div class="form-group">
     <label for="status">Status *</label><td>
-    <select name="status" id="status" >
+    <select name="status" id="status" style="width: 200px">
      <option value="">Select status</option>
      <option value="proposed">Proposed</option>
      <option value="approved">Approved</option>
      <option value="denied">Denied</option>
     </select>
-    </td></tr>
+        </td></div>
+           <tr><td>
+    <div class="form-group">
+    <td> 
+        <input type="submit" value="Submit" style="width: 100px" onclick="store()">
+    </div>
+               </td></tr></td>
 </table>
+    
      </form>
 </div>
      
+
+     
+     <script>
+     function store(){
+      var name = document.getElementById("name");
+      localStorage.setItem("name", name.value);
+      console.log(name);
+         
+      function fillFields(){
+        document.getElementById('name').value=name;      
+      }   
+    
+    }
+         
+         
+     </script>
     </body>
 </html>
