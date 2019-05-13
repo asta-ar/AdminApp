@@ -12,7 +12,8 @@ body {
     padding: 0.5em;
     background-color: #ffffff;
     width: 1024px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     border: 2px solid #a3d8ff;
 }
 
@@ -61,10 +62,8 @@ ul {
     padding: 10px;
     overflow: hidden;
     background-color: white;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
     font-family: Arial, Helvetica, sans-serif;    
 }
 
@@ -96,13 +95,6 @@ li a:hover {
     font-weight: bold;
 }
 
-/* main body styling */
-#page {
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    padding-bottom: 20px;    
-}
-
 
 /* form styling */
 span {
@@ -132,6 +124,11 @@ legend {
     font-weight: bold;
 }
 
+#status {
+    width: 200px;
+}
+
+
 label span:first-child {
     display: inline-block;
     min-width: 6em;
@@ -148,8 +145,10 @@ select {
 }
 
 input[type="submit"] {
-    margin-left: 100px;
+    margin-left: 150px;
     margin-top: 10px;
+    border-radius: 2px;
+    border: 1px solid black;
 }
 
 input[type="submit"] + br {
@@ -206,7 +205,7 @@ table {
     width: 70%;
     margin-left: 2em;
     margin-top: 2em;
-    margin-bottom: 2em;  
+    margin-bottom: 2em; 
 }
 
 
@@ -221,3 +220,26 @@ td {
     background-color: #ffffff; 
     border: 1px solid black;
 }
+
+/* Footer style rules */
+
+.footer{ 
+    border-top: 2px solid black;
+    width: 98%;
+    height: 40px;
+}
+
+#footerLeft {
+    width: 80%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+#footerRight {
+    margin-top: 15px;
+    width: 20%;
+    float: right;
+    margin-bottom: 20px;
+}
+
+/* media rules for a small screen device */

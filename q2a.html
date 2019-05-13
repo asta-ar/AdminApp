@@ -19,7 +19,7 @@
                 <a id="contacts" href="url">Contact the OU</a>
             </div>
          </header>
-        <div id="page">
+        
             <!--Navigation bar-->
             <ul>
                 <li><a href="">Home</a></li> 
@@ -148,7 +148,7 @@
                         <select 
             required 
             aria-describedby="status-error"
-            name="status" id="status" style="width: 200px">
+            name="status" id="status">
                             <option value="">Select status</option>
                             <option value="proposed">Proposed</option>
                             <option value="approved">Approved</option>
@@ -161,13 +161,23 @@
                     <input type="submit" value="Submit">
                 </fieldset>
             </form>
-        </div>
      
     <!--Code that will GET the previously 
 added walk data from the database to the following table should go here-->
         
         <table><thead><tr><th>Name</th><th>Date</th><th>Start time</th><th>Meeting point</th><th>Distance(miles)</th><th>Notes</th><th>Status</th><th>Edit</th></tr></thead><tbody>
          </tbody></table>
-    
+            
+        <div class="footer">
+        <div id="footerLeft">            
+        <p>The Open University © Copyright 2019. All Rights Reserved.</p>
+        </div>
+        <div id="footerRight">
+            <a id="footerContacts" href="url">Contact the OU</a>
+        </div>
+        </div>
+        
     </body>
 </html>
+
+   
