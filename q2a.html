@@ -97,7 +97,7 @@
       });
     </script>
 
-    <form action="https://students.open.ac.uk/mct/tt284/reflect/reflect.php" method="post">
+    <form id="walkForm" action="https://students.open.ac.uk/mct/tt284/reflect/reflect.php" method="post">
       <fieldset>
         <legend>Add a new walk</legend>
         <label class="block">
@@ -106,7 +106,7 @@
             value=""
                         name="name"
             type="text"
-            maxlength="15"
+            maxlength="40"
             required
             placeholder="e.g. Watcombe to Sheldon"
             pattern="[A-Za-z0-9 ]+"
@@ -115,7 +115,7 @@
           >
           <span class="ok"></span>
           <span id="name-error" class="error" role="alert">
-            Use only letters and numbers.
+            Please use only letters and numbers.
           </span>
         </label>
           
@@ -130,7 +130,7 @@
           >
           <span class="ok"></span>
           <span id="date-error" class="error" role="alert">
-            This field is required.
+            Please select a date.
           </span>
         </label>
           
@@ -146,7 +146,7 @@
           >
           <span class="ok"></span>
           <span id="time-error" class="error" role="alert">
-            This field is required.
+            Please select the time.
           </span>
         </label>
        
@@ -160,28 +160,28 @@
                         name="point"
             type="text"
             required
-            pattern="[A-Za-z0-9 ]+"
+            pattern="[A-Za-z0-9 ,.!?]+"
             max="40"
             placeholder="e.g. Watcombe Car Park"
             aria-describedby="point-error"
           >
           <span class="ok"></span>
           <span id="point-error" class="error" role="alert">
-            This field is required
+            Letters, numbers and ,.!? symbols alowed.
           </span>
         </label>
         <label class="block">
           <span>Distance (miles)</span>
           <input
             value=""
-                        name="distance"
+            name="distance"
             type="number"
             placeholder="e.g. 9"
             aria-describedby="distance_address-error"
           >
           <span class="ok"></span>
           <span id="distance_address-error" class="error" role="alert">
-            Enter a distance in miles.
+            Please enter a distance in miles.
           </span>
         </label>
         <label class="block">
@@ -192,12 +192,12 @@
             placeholder="e.g. Grade A walk with steep hills."
             type="text"
             maxlength="60"
-            pattern="[A-Za-z0-9 ]+"
+            pattern="[A-Za-z0-9 ,.!?]+"
             aria-describedby="notes-error"
           >
           <span class="ok"></span>
           <span id="notes-error" class="error" role="alert">
-            Use only letter and numbers.
+            Letters, numbers and ,.!? symbols alowed.
           </span>
         </label>
           
@@ -214,10 +214,6 @@
      <option value="approved">Approved</option>
      <option value="denied">Denied</option>
     </select>
-              <span class="ok"></span>
-          <span id="status-error" class="error" role="alert">
-            Please select a status.
-          </span>
               </label>
           
           
@@ -226,24 +222,14 @@
         <input type="submit" value="Submit">
       </fieldset>
     </form>
-
-
-         
-
-
-     <script>
-     function store(){
-      var name = document.getElementById("name");
-      localStorage.setItem("name", name.value);
-      console.log(name);
-         
-      function fillFields(){
-        document.getElementById('name').value=name;      
-      }   
-    
-    }
-         
-     </script>
      </div>
+     
+     
+    <!--Code that will GET the previously 
+added data from the database to the table should go here-->
+     
+     <table><thead><tr><th>Name</th><th>Date</th><th>Start time</th><th>Meeting point</th><th>Distance(miles)</th><th>Notes</th><th>Status</th><th>Edit</th></tr></thead><tbody>
+         </tbody></table>
+     
     </body>
 </html>
