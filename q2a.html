@@ -9,17 +9,20 @@
         href = "q2a.css" />
 </head>
  <body>
+     
      <header>
-         <img src="oulogo.png" alt="OU logo" width="100" height="77">
+   <div id="left">
+         <img id="logo" src="oulogo.png" alt="OU logo">
          <h2>OU Walking Club</h2>
          <p>Admin Application</p>
-         
-         <div align="right" id="top">
-         <a href="url">Contact the OU</a>
-         <input type="submit" value="Sign Out" style="width: 100px">     
-         </div>
+</div>
+      <div id="right">
+         <input id="out" type="submit" value="Sign Out">
+         <a id="contacts" href="url">Contact the OU</a>
+    </div>
          
      </header>
+     <div id="page">
      <ul>
          <li><a href="">Home</a></li> 
          <li><a href="q2a.html" id="activePage">Walk events</a></li>
@@ -29,70 +32,205 @@
          <li><a href="">News</a></li>
      </ul>
      
-<div id="table">
-<h3>Add a new walk</h3>     
-<form action="https://students.open.ac.uk/mct/tt284/reflect/reflect.php" method="post">    
-    <table id="formTable">
-            <tr><td>
-    <div class="form-group">
-     <label for="name">Name *</label><td>
-     <input id="name" style="width: 200px" name="name" type="text">
-    </div>
-                </td></tr>
-    <tr><td>
-    <div class="form-group">
-     <label for="date">Date *</label><td>
-     <input id="date" name="date" style="width: 200px" type="date">
-    </div>
-      </td></tr>
-       <tr><td>
-    <div class="form-group">
-     <label for="time">Time *</label><td>
-     <input id="time" name="time" style="width: 200px" type="time">
-    </div>
-          </td></tr>
-       <tr><td>
-    <div class="form-group">
-     <label for="point">Meeting point *</label><td>
-     <input id="point" name="point" style="width: 200px" type="text">
-    </div>
-        </td></tr>
-       <tr><td>
-    <div class="form-group">
-     <label for="distance">Distance (miles)</label><td>
-     <input id="distance" name="distance" style="width: 200px" type="number">
-    </div> 
-         </td></tr>
-       <tr><td>
-    <div class="form-group">
-     <label for="notes">Notes</label><td>
-     <input id="notes" name="notes" style="width: 300px" type="text">
-    </div> 
-    </td></tr>
-        
-       <tr><td>   
-    <div class="form-group">
-    <label for="status">Status *</label><td>
-    <select name="status" id="status" style="width: 200px">
+
+ <!-- This CSS is reusable and could be moved to an external file -->
+    <style>
+      /* Simple initial CSS to present forms more neatly */
+
+   
+    </style>
+    <!-- This JavaScript is reusable and could be moved to an external file -->
+    <script>
+      // This line runs the code inside this function after the page is loaded
+      // (or place the code at the end of the page, but this is more reliable)
+      window.addEventListener("load", function() {
+
+        // Find all input elements with the "required" attribute
+        var inputs = document.querySelectorAll(":required");
+
+        // Note this is for..of not for..in unlike e.g. Python
+        for (var input of inputs) {
+          // Add the "required" class to each containing label element
+          // Let the CSS take care of the formatting
+          input.parentNode.classList.add("required");
+        }
+
+      });
+
+      // This line runs the code inside this function after the page is loaded
+      window.addEventListener("load", function() {
+
+        // Make a function to mark inputs as visited when they lose focus
+        function markVisited(event) {
+          // Add the "visited" class to the element causing the event
+          // Let the CSS take care of the formatting
+          event.target.classList.add("visited");
+        }
+
+        // Make a function to set a custom message from a data-message attribute
+        function checkInput(event) {
+          // Remove existing custom message
+          // You have to clear this first else it will make the element invalid!
+          event.target.setCustomValidity("");
+
+          // Recheck validity based on HTML attributes
+          if (!event.target.checkValidity()) {
+            // Set custom message if input isn't valid
+            event.target.setCustomValidity(event.target.dataset.message);
+          }
+        }
+
+        // Find all input elements
+        var inputs = document.getElementsByTagName("input");
+
+        // Note this is for..of not for..in unlike e.g. Python
+        for (var input of inputs) {
+          // Add an onblur event handler to each input
+          input.onblur = markVisited;
+
+          // Set a custom invalid message for inputs with data-message attribute
+          if (input.dataset.message) {
+            input.oninput = checkInput;
+          }
+        }
+
+      });
+    </script>
+
+    <form action="https://students.open.ac.uk/mct/tt284/reflect/reflect.php" method="post">
+      <fieldset>
+        <legend>Add a new walk</legend>
+        <label class="block">
+          <span>Name</span>
+          <input
+            value=""
+                        name="name"
+            type="text"
+            maxlength="15"
+            required
+            placeholder="e.g. Watcombe to Sheldon"
+            pattern="[A-Za-z0-9 ]+"
+            data-message="Please use letters and numbers."
+            aria-describedby="name-error"
+          >
+          <span class="ok"></span>
+          <span id="name-error" class="error" role="alert">
+            Use only letters and numbers.
+          </span>
+        </label>
+          
+           <label class="block">
+          <span>Date</span>
+          <input
+            value=""
+                        name="date"
+            type="date"
+            required
+            aria-describedby="date-error"
+          >
+          <span class="ok"></span>
+          <span id="date-error" class="error" role="alert">
+            This field is required.
+          </span>
+        </label>
+          
+          
+        <label class="block">
+          <span>Time</span>
+          <input
+            value=""
+                        name="time"
+            type="time"
+            required
+            aria-describedby="time_name-error"
+          >
+          <span class="ok"></span>
+          <span id="time-error" class="error" role="alert">
+            This field is required.
+          </span>
+        </label>
+       
+          
+          
+          
+        <label class="block">
+          <span>Meeting point</span>
+          <input
+            value=""
+                        name="point"
+            type="text"
+            required
+            pattern="[A-Za-z0-9 ]+"
+            max="40"
+            placeholder="e.g. Watcombe Car Park"
+            aria-describedby="point-error"
+          >
+          <span class="ok"></span>
+          <span id="point-error" class="error" role="alert">
+            This field is required
+          </span>
+        </label>
+        <label class="block">
+          <span>Distance (miles)</span>
+          <input
+            value=""
+                        name="distance"
+            type="number"
+            placeholder="e.g. 9"
+            aria-describedby="distance_address-error"
+          >
+          <span class="ok"></span>
+          <span id="distance_address-error" class="error" role="alert">
+            Enter a distance in miles.
+          </span>
+        </label>
+        <label class="block">
+          <span>Notes</span>
+          <input
+            value=""
+            name="notes"
+            placeholder="e.g. Grade A walk with steep hills."
+            type="text"
+            maxlength="60"
+            pattern="[A-Za-z0-9 ]+"
+            aria-describedby="notes-error"
+          >
+          <span class="ok"></span>
+          <span id="notes-error" class="error" role="alert">
+            Use only letter and numbers.
+          </span>
+        </label>
+          
+          
+          
+          <label class="block">
+        <span>Status</span>
+    <select 
+            required 
+            aria-describedby="status-error"
+            name="status" id="status" style="width: 200px">
      <option value="">Select status</option>
      <option value="proposed">Proposed</option>
      <option value="approved">Approved</option>
      <option value="denied">Denied</option>
     </select>
-        </td></div>
-           <tr><td>
-    <div class="form-group">
-    <td> 
-        <input type="submit" value="Submit" style="width: 100px" onclick="store()">
-    </div>
-               </td></tr></td>
-</table>
-    
-     </form>
-</div>
-     
+              <span class="ok"></span>
+          <span id="status-error" class="error" role="alert">
+            Please select a status.
+          </span>
+              </label>
+          
+          
+          
+          <input type="hidden" id="sessionID" name="sessionId" value="12345678-09ab-1111-cdef">
+        <input type="submit" value="Submit">
+      </fieldset>
+    </form>
 
-     
+
+         
+
+
      <script>
      function store(){
       var name = document.getElementById("name");
@@ -105,7 +243,7 @@
     
     }
          
-         
      </script>
+     </div>
     </body>
 </html>
