@@ -1,108 +1,70 @@
 <!DOCTYPE html>
-
 <html lang="en">
- <head>
- <meta charset="UTF-8" >
- <title>OU Walking Club Admin Application</title>
- <link rel = "stylesheet"
+    <head>
+        <meta charset="UTF-8" >
+        <title>OU Walking Club Admin Application</title>
+        <link rel = "stylesheet"
         type = "text/css"
         href = "q2a.css" />
-</head>
- <body>
-     
-     <header>
-   <div id="left">
-         <img id="logo" src="oulogo.png" alt="OU logo">
-         <h2>OU Walking Club</h2>
-         <p>Admin Application</p>
-</div>
-      <div id="right">
-         <input id="out" type="submit" value="Sign Out">
-         <a id="contacts" href="url">Contact the OU</a>
-    </div>
-         
-     </header>
-     <div id="page">
-     <ul>
-         <li><a href="">Home</a></li> 
-         <li><a href="q2a.html" id="activePage">Walk events</a></li>
-         <li><a href="">Social events</a></li>
-         <li><a href="">Memberships</a></li>
-         <li><a href="">Announcements</a></li>
-         <li><a href="">News</a></li>
-     </ul>
-     
-
- <!-- This CSS is reusable and could be moved to an external file -->
-    <style>
-      /* Simple initial CSS to present forms more neatly */
-
-   
-    </style>
-    <!-- This JavaScript is reusable and could be moved to an external file -->
-    <script>
-      // This line runs the code inside this function after the page is loaded
-      // (or place the code at the end of the page, but this is more reliable)
-      window.addEventListener("load", function() {
-
-        // Find all input elements with the "required" attribute
-        var inputs = document.querySelectorAll(":required");
-
-        // Note this is for..of not for..in unlike e.g. Python
-        for (var input of inputs) {
-          // Add the "required" class to each containing label element
-          // Let the CSS take care of the formatting
-          input.parentNode.classList.add("required");
-        }
-
-      });
-
-      // This line runs the code inside this function after the page is loaded
-      window.addEventListener("load", function() {
-
-        // Make a function to mark inputs as visited when they lose focus
-        function markVisited(event) {
-          // Add the "visited" class to the element causing the event
-          // Let the CSS take care of the formatting
-          event.target.classList.add("visited");
-        }
-
-        // Make a function to set a custom message from a data-message attribute
-        function checkInput(event) {
-          // Remove existing custom message
-          // You have to clear this first else it will make the element invalid!
-          event.target.setCustomValidity("");
-
-          // Recheck validity based on HTML attributes
-          if (!event.target.checkValidity()) {
-            // Set custom message if input isn't valid
-            event.target.setCustomValidity(event.target.dataset.message);
-          }
-        }
-
-        // Find all input elements
-        var inputs = document.getElementsByTagName("input");
-
-        // Note this is for..of not for..in unlike e.g. Python
-        for (var input of inputs) {
-          // Add an onblur event handler to each input
-          input.onblur = markVisited;
-
-          // Set a custom invalid message for inputs with data-message attribute
-          if (input.dataset.message) {
-            input.oninput = checkInput;
-          }
-        }
-
-      });
-    </script>
-
-    <form id="walkForm" action="https://students.open.ac.uk/mct/tt284/reflect/reflect.php" method="post">
-      <fieldset>
-        <legend>Add a new walk</legend>
-        <label class="block">
-          <span>Name</span>
-          <input
+    </head>
+    <body>
+        <header>
+            <div id="left">
+                <img id="logo" src="oulogo.png" alt="OU logo">
+                <h2>OU Walking Club</h2>
+                <p>Admin Application</p>
+            </div>
+            <div id="right">
+                <input id="out" type="submit" value="Sign Out">
+                <a id="contacts" href="url">Contact the OU</a>
+            </div>
+         </header>
+        <div id="page">
+            <!--Navigation bar-->
+            <ul>
+                <li><a href="">Home</a></li> 
+                <li><a href="q2a.html" id="activePage">Walk events</a></li>
+                <li><a href="">Social events</a></li>
+                <li><a href="">Memberships</a></li>
+                <li><a href="">Announcements</a></li>
+                <li><a href="">News</a></li>
+            </ul>
+            
+            <!--JS validation-->
+            <script>
+                window.addEventListener("load", function() {
+                    var inputs = document.querySelectorAll(":required");
+                    for (var input of inputs) {
+                        input.parentNode.classList.add("required");
+                    }
+                });
+                window.addEventListener("load", function() {
+                    function markVisited(event) {
+                        event.target.classList.add("visited");
+                    }
+                    function checkInput(event) {
+                        event.target.setCustomValidity("");
+                        if (!event.target.checkValidity()) {
+                            event.target.setCustomValidity(event.target.dataset.message);
+                        }
+                    }
+                    var inputs = document.getElementsByTagName("input");
+                    for (var input of inputs) {
+                        input.onblur = markVisited;
+                        if (input.dataset.message) {
+                            input.oninput = checkInput;
+                        }
+                    }
+                });
+            </script>
+            
+            <!--Add walk form-->
+            <form id="walkForm" action="https://students.open.ac.uk/mct/tt284/reflect/reflect.php" method="post">
+                <fieldset>
+                    <legend>Add a new walk</legend>
+                    <label class="block">
+                        <span>Name</span>
+                        <input
             value=""
                         name="name"
             type="text"
@@ -111,51 +73,38 @@
             placeholder="e.g. Watcombe to Sheldon"
             pattern="[A-Za-z0-9 ]+"
             data-message="Please use letters and numbers."
-            aria-describedby="name-error"
-          >
-          <span class="ok"></span>
-          <span id="name-error" class="error" role="alert">
-            Please use only letters and numbers.
-          </span>
-        </label>
-          
-           <label class="block">
-          <span>Date</span>
-          <input
+            aria-describedby="name-error">
+                        <span class="ok"></span>
+                        <span id="name-error" class="error" role="alert">
+            Please use only letters and numbers.</span></label>
+                    
+                    <label class="block">
+                        <span>Date</span>
+                        <input
             value=""
-                        name="date"
+            name="date"
             type="date"
             required
-            aria-describedby="date-error"
-          >
-          <span class="ok"></span>
-          <span id="date-error" class="error" role="alert">
-            Please select a date.
-          </span>
-        </label>
-          
-          
-        <label class="block">
-          <span>Time</span>
-          <input
+            aria-describedby="date-error">
+                        <span class="ok"></span>
+                        <span id="date-error" class="error" role="alert">
+            Please select a date.</span></label>
+                    
+                    <label class="block">
+                        <span>Time</span>
+                        <input
             value=""
-                        name="time"
+            name="time"
             type="time"
             required
-            aria-describedby="time_name-error"
-          >
-          <span class="ok"></span>
-          <span id="time-error" class="error" role="alert">
-            Please select the time.
-          </span>
-        </label>
-       
-          
-          
-          
-        <label class="block">
-          <span>Meeting point</span>
-          <input
+            aria-describedby="time_name-error">
+                        <span class="ok"></span>
+                        <span id="time-error" class="error" role="alert">
+            Please select the time.</span></label>
+                    
+                    <label class="block">
+                        <span>Meeting point</span>
+                        <input
             value=""
                         name="point"
             type="text"
@@ -163,73 +112,62 @@
             pattern="[A-Za-z0-9 ,.!?]+"
             max="40"
             placeholder="e.g. Watcombe Car Park"
-            aria-describedby="point-error"
-          >
-          <span class="ok"></span>
-          <span id="point-error" class="error" role="alert">
-            Letters, numbers and ,.!? symbols alowed.
-          </span>
-        </label>
-        <label class="block">
-          <span>Distance (miles)</span>
-          <input
+            aria-describedby="point-error">
+                        <span class="ok"></span>
+                        <span id="point-error" class="error" role="alert">
+            Letters, numbers and ,.!? symbols alowed.</span></label>
+                    
+                    <label class="block">
+                        <span>Distance (miles)</span>
+                        <input
             value=""
             name="distance"
             type="number"
             placeholder="e.g. 9"
-            aria-describedby="distance_address-error"
-          >
-          <span class="ok"></span>
-          <span id="distance_address-error" class="error" role="alert">
-            Please enter a distance in miles.
-          </span>
-        </label>
-        <label class="block">
-          <span>Notes</span>
-          <input
+            aria-describedby="distance_address-error">
+                        <span class="ok"></span>
+                        <span id="distance_address-error" class="error" role="alert">
+            Please enter a distance in miles.</span></label>
+                    
+                    <label class="block">
+                        <span>Notes</span>
+                        <input
             value=""
             name="notes"
             placeholder="e.g. Grade A walk with steep hills."
             type="text"
             maxlength="60"
             pattern="[A-Za-z0-9 ,.!?]+"
-            aria-describedby="notes-error"
-          >
-          <span class="ok"></span>
-          <span id="notes-error" class="error" role="alert">
-            Letters, numbers and ,.!? symbols alowed.
-          </span>
-        </label>
-          
-          
-          
-          <label class="block">
-        <span>Status</span>
-    <select 
+            aria-describedby="notes-error">
+                        <span class="ok"></span>
+                        <span id="notes-error" class="error" role="alert">
+            Letters, numbers and ,.!? symbols alowed.</span></label>
+                    
+                    <label class="block">
+                        <span>Status</span>
+                        <select 
             required 
             aria-describedby="status-error"
             name="status" id="status" style="width: 200px">
-     <option value="">Select status</option>
-     <option value="proposed">Proposed</option>
-     <option value="approved">Approved</option>
-     <option value="denied">Denied</option>
-    </select>
-              </label>
-          
-          
-          
-          <input type="hidden" id="sessionID" name="sessionId" value="12345678-09ab-1111-cdef">
-        <input type="submit" value="Submit">
-      </fieldset>
-    </form>
-     </div>
-     
+                            <option value="">Select status</option>
+                            <option value="proposed">Proposed</option>
+                            <option value="approved">Approved</option>
+                            <option value="denied">Denied</option>
+                        </select>
+                    </label>
+                    
+                    <input type="hidden" id="sessionID" name="sessionId" value="12345678-09ab-1111-cdef">
+                    
+                    <input type="submit" value="Submit">
+                </fieldset>
+            </form>
+        </div>
      
     <!--Code that will GET the previously 
-added data from the database to the table should go here-->
-     
-     <table><thead><tr><th>Name</th><th>Date</th><th>Start time</th><th>Meeting point</th><th>Distance(miles)</th><th>Notes</th><th>Status</th><th>Edit</th></tr></thead><tbody>
+added walk data from the database to the following table should go here-->
+        
+        <table><thead><tr><th>Name</th><th>Date</th><th>Start time</th><th>Meeting point</th><th>Distance(miles)</th><th>Notes</th><th>Status</th><th>Edit</th></tr></thead><tbody>
          </tbody></table>
-     
+    
     </body>
 </html>

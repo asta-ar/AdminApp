@@ -5,28 +5,21 @@ html {
 title {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 body {
-    
-    background-color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 1024px;
-    padding: 2px;
-    border: 2px;
-    margin: auto;
-    border: 2px solid #a3d8ff;
-    
+
 }
 
 #left {
     width: 300px;
     float: left;
 }
+
 #right {
     margin-top: 140px;
     width: 300px;
     float: right;
 }
-
 
 #out {
     float: right;
@@ -34,6 +27,7 @@ body {
     margin: 2px;
     width: 100px;
 }
+
 #contacts {
     float:right;
     margin-right: 20px;
@@ -45,18 +39,17 @@ body {
 }
 
 ul {
-width: 98%;
-  list-style-type: none;
-  margin: 0;
-  padding: 10px;
-  overflow: hidden;
-  background-color: white;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-top-width: 1px;
+    width: 98%;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: white;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-width: 1px;
     border-bottom-width: 1px;
-    font-family: Arial, Helvetica, sans-serif;
-    
+    font-family: Arial, Helvetica, sans-serif;    
 }
 
 li {
@@ -67,16 +60,15 @@ li {
 }
 
 li a {
-  display: block;
-  color: black;
-  border-style: solid;
-  border-width: 1px;
-  margin: 5px;
-  text-align: center;
-  padding: 7px 10px;
-  font-size: 12px;
-  text-decoration: none;
-  
+    display: block;
+    color: black;
+    border-style: solid;
+    border-width: 1px;
+    margin: 5px;
+    text-align: center;
+    padding: 7px 10px;
+    font-size: 12px;
+    text-decoration: none;
 }
 
 li a:hover {
@@ -87,7 +79,6 @@ li a:hover {
     background-color: #9ec6e2;
     font-weight: bold;
 }
-
 
 #page {
     border-bottom-style: solid;
@@ -100,7 +91,6 @@ li a:hover {
 }
 
 
-/* JS table css */
 span {
     width: 150px;
     text-align: right;
@@ -112,142 +102,139 @@ input {
 }
 
 
-   /* Ensure everything has the same font */
-      body, input, textarea, select {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
-      }
+body, input, textarea, select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
 
-      /* Nicer spacing */
-      body {
-        padding: 0.5em;
-      }
-      h1 {
-        margin-top: 0;
-      }
+body {
+    padding: 0.5em;
+    background-color: #ffffff;
+    width: 1024px;
+    margin: auto;
+    border: 2px solid #a3d8ff;
+}
 
-      /* Limit width of form and centre in page */
-      form {
-        padding: 0.5em;
-        width: 600px;
-        margin-left: 5em;
-      }
-      fieldset {
-        margin-bottom: 0.5em;
-          border: 0 none;
-      }
-      legend {
-        padding-top: 20px;
-        font-size: 1.4em;
-        font-weight: bold;
-          
-      }
+h1 {
+    margin-top: 0;
+}
 
-      /* Line up labels a bit (use :first-child to only add * to span before each input) */
-      label span:first-child {
-        display: inline-block;
-        min-width: 6em;
-      }
+form {
+    padding: 0.5em;
+    width: 600px;
+    margin-left: 5em;
+}
 
-      /* Nicer text inputs (use :not() to avoid selecting Submit button) */
-      input:not([type="submit"]), textarea {
-        border: 2px inset #eee;
-        padding: 2px;
-      }
-      select {
-        border: 2px inset #eee;
-        padding: 1px; /* select padding works slightly differently to input */
-      }
+fieldset {
+    margin-bottom: 0.5em;
+    border: 0 none;
+}
 
-      /* Align submit button to right */
-      input[type="submit"] {
-        margin-left: 100px;
-        margin-top: 10px;
-      }
-      /* Keep floating submit button within the form
-       * The + means select the br element immediately following the input
-       */
-      input[type="submit"] + br {
-        clear: both;
-      }
+legend {
+    padding-top: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
 
-      /* Put e.g. inputs with class="block" in their own row */
-      .block {
-        display: block;
-        margin: 0.5em 0;
-      }
+label span:first-child {
+    display: inline-block;
+    min-width: 6em;
+}
 
-      /* Example usability CSS */
+/* Nicer text inputs (use :not() to avoid selecting Submit button) */
+input:not([type="submit"]), textarea {
+    border: 2px inset #eee;
+    padding: 2px;
+}
 
-      /* Indicate required inputs with a * after the first span inside their label
-       * Requires adding class="required" to the label or using JavaScript (see below)
-       */
-      label.required span:first-child::after {
-        content: ' *';
-        color: #c00;
-      }
+select {
+    border: 2px inset #eee;
+    padding: 1px; /* select padding works slightly differently to input */
+}
+
+/* Align submit button to right */
+input[type="submit"] {
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+/* Keep floating submit button within the form
+* The + means select the br element immediately following the input */
+input[type="submit"] + br {
+    clear: both;
+}
+
+/* Put e.g. inputs with class="block" in their own row */
+.block {
+    display: block;
+    margin: 0.5em 0;
+}
+
+
+/* Indicate required inputs with a * after the first span inside their label
+* Requires adding class="required" to the label or using JavaScript (see below) */
+label.required span:first-child::after {
+    content: ' *';
+    color: #c00;
+}
       
-      /* Indicate current input */
-      input:focus, textarea:focus, select:focus {
-        outline: 2px solid #4286f4;
-      }
+/* Indicate current input */
+input:focus, textarea:focus, select:focus {
+    outline: 2px solid #4286f4;
+}
 
-      /* Example validation CSS */
+/* Add a light red background to visited invalid inputs
+* Inputs are marked as visited using JavaScript (see below) */
+input.visited:invalid,
+textarea.invalid {
+    background-color: #fffafa;
+}
 
-      /* Add a light red background to visited invalid inputs
-       * Inputs are marked as visited using JavaScript (see below)
-       */
-      input.visited:invalid,
-      textarea.invalid {
-        background-color: #fffafa;
-      }
+/* Hide validation feedback by default */
+span.ok, span.error {  
+    width: 300px;
+    position: absolute; 
+    opacity: 0;
+    transition: opacity 0.2s; /* fade in/out nicely */
+    text-align: left;
+}
 
-      /* Hide validation feedback by default */
-      span.ok, span.error {  
-        width: 300px;
-        position: absolute; /* simpler solution: just use display: none; */
-        opacity: 0;
-        transition: opacity 0.2s; /* fade in/out nicely */
-      }
+/* Insert green Unicode check mark before OK feedback */
+span.ok::before {
+    content: "\2714";
+    color: #0a0;
+    margin: 0 0 0 0.5em;
+}
+      
+/* Insert red Unicode cross mark before error feedback */
+span.error::before {
+    content: "\2718";
+    color: #a00;
+    margin: 0 0 0 0.5em;
+}
 
-      /* Insert green Unicode check mark before OK feedback */
-      span.ok::before {
-        content: "\2714";
-        color: #0a0;
-        margin: 0 0 0 0.5em;
-      }
-      /* Insert red Unicode cross mark before error feedback */
-      span.error::before {
-        content: "\2718";
-        color: #a00;
-        margin: 0 0 0 0.5em;
-      }
+/* Show feedback after visited inputs
+* The ~ selects span elements that are siblings of each input element */
+input.visited:valid ~ span.ok,
+input.visited:invalid ~ span.error {
+    opacity: 1; /* simpler solution: just use display: inline; */
+}
 
-      /* Show feedback after visited inputs
-       * The ~ selects span elements that are siblings of each input element
-       */
-      input.visited:valid ~ span.ok,
-      input.visited:invalid ~ span.error {
-        opacity: 1; /* simpler solution: just use display: inline; */
-      }
-
-      /* Simple CSS to present data tables a bit more neatly */
-
-      table {
-        border-collapse: collapse;
-        width: 70%;
-        margin-left: 2em;
-        margin-top: 2em;
-        margin-bottom: 2em;  
-      }
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin-left: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;  
+}
 
 
-      th {
-        background-color: #d6eeff; 
-        font-size: 12px;
-        text-align: left;
-        border: 1px solid black;
-      }
+th {
+    background-color: #d6eeff; 
+    font-size: 12px;
+    text-align: left;
+    border: 1px solid black;
+}
 
 td {
     background-color: #ffffff; 
