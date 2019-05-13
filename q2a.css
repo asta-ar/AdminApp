@@ -1,13 +1,27 @@
+/* general styling */
 html {
     background-image: linear-gradient(#ffffff, #d6eeff);
 }
 
-title {
+body, input, textarea, select {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
 }
 
 body {
+    padding: 0.5em;
+    background-color: #ffffff;
+    width: 1024px;
+    margin: auto;
+    border: 2px solid #a3d8ff;
+}
 
+h1 {
+    margin-top: 0;
+}
+/* styling for the top part of the page */
+title {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #left {
@@ -38,6 +52,8 @@ body {
     height: 77px;
 }
 
+
+/* navigation bar styling */
 ul {
     width: 98%;
     list-style-type: none;
@@ -80,17 +96,15 @@ li a:hover {
     font-weight: bold;
 }
 
+/* main body styling */
 #page {
     border-bottom-style: solid;
     border-bottom-width: 1px;
     padding-bottom: 20px;    
 }
 
-.form-group {
-    padding: 2px;
-}
 
-
+/* form styling */
 span {
     width: 150px;
     text-align: right;
@@ -99,24 +113,6 @@ span {
 
 input {
     width: 250px;
-}
-
-
-body, input, textarea, select {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-}
-
-body {
-    padding: 0.5em;
-    background-color: #ffffff;
-    width: 1024px;
-    margin: auto;
-    border: 2px solid #a3d8ff;
-}
-
-h1 {
-    margin-top: 0;
 }
 
 form {
@@ -141,7 +137,6 @@ label span:first-child {
     min-width: 6em;
 }
 
-/* Nicer text inputs (use :not() to avoid selecting Submit button) */
 input:not([type="submit"]), textarea {
     border: 2px inset #eee;
     padding: 2px;
@@ -149,77 +144,63 @@ input:not([type="submit"]), textarea {
 
 select {
     border: 2px inset #eee;
-    padding: 1px; /* select padding works slightly differently to input */
+    padding: 1px; 
 }
 
-/* Align submit button to right */
 input[type="submit"] {
     margin-left: 100px;
     margin-top: 10px;
 }
 
-/* Keep floating submit button within the form
-* The + means select the br element immediately following the input */
 input[type="submit"] + br {
     clear: both;
 }
 
-/* Put e.g. inputs with class="block" in their own row */
 .block {
     display: block;
     margin: 0.5em 0;
 }
 
-
-/* Indicate required inputs with a * after the first span inside their label
-* Requires adding class="required" to the label or using JavaScript (see below) */
 label.required span:first-child::after {
     content: ' *';
     color: #c00;
 }
       
-/* Indicate current input */
 input:focus, textarea:focus, select:focus {
     outline: 2px solid #4286f4;
 }
 
-/* Add a light red background to visited invalid inputs
-* Inputs are marked as visited using JavaScript (see below) */
 input.visited:invalid,
 textarea.invalid {
     background-color: #fffafa;
 }
 
-/* Hide validation feedback by default */
 span.ok, span.error {  
     width: 300px;
     position: absolute; 
     opacity: 0;
-    transition: opacity 0.2s; /* fade in/out nicely */
+    transition: opacity 0.2s; 
     text-align: left;
 }
 
-/* Insert green Unicode check mark before OK feedback */
 span.ok::before {
     content: "\2714";
     color: #0a0;
     margin: 0 0 0 0.5em;
 }
       
-/* Insert red Unicode cross mark before error feedback */
 span.error::before {
     content: "\2718";
     color: #a00;
     margin: 0 0 0 0.5em;
 }
 
-/* Show feedback after visited inputs
-* The ~ selects span elements that are siblings of each input element */
 input.visited:valid ~ span.ok,
 input.visited:invalid ~ span.error {
-    opacity: 1; /* simpler solution: just use display: inline; */
+    opacity: 1; 
 }
 
+/* table styling */
 table {
     border-collapse: collapse;
     width: 70%;
