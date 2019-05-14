@@ -1,5 +1,6 @@
 /* general styling */
 html {
+    min-height: 100%;
     background-image: linear-gradient(#ffffff, #d6eeff);
 }
 
@@ -9,6 +10,7 @@ body, input, textarea, select {
 }
 
 body {
+    
     padding: 0.5em;
     background-color: #ffffff;
     width: 1024px;
@@ -17,48 +19,54 @@ body {
     border: 2px solid #a3d8ff;
 }
 
-h1 {
-    margin-top: 0;
-}
 /* styling for the top part of the page */
-title {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 #left {
-    width: 300px;
+    width: 420px;
+    max-height: 100px;
     float: left;
-}
-
-#right {
-    margin-top: 140px;
-    width: 300px;
-    float: right;
-}
-
-#out {
-    float: right;
-    padding: 2px;
-    margin: 2px;
-    width: 100px;
-}
-
-#contacts {
-    float:right;
-    margin-right: 20px;
+    display: block;
+    
 }
 
 #logo {
+    margin-top: 10px;
+    float: left;
     width: 100px;
     height: 77px;
 }
 
+#titletxt {
+    float: right;
+    max-height: 100px;
+    width: 300px; 
+}
+
+#right {
+    margin-top: 90px;
+    width: 250px;
+    float: right;
+}
+
+#out {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    float: right;
+    padding: 2px;
+    width: 100px;
+}
+
+#contacts {
+    float: left;
+    padding-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
 
 /* navigation bar styling */
 ul {
     width: 98%;
     list-style-type: none;
-    margin: 0;
     padding: 10px;
     overflow: hidden;
     background-color: white;
@@ -97,6 +105,13 @@ li a:hover {
 
 
 /* form styling */
+
+#walkForm {
+    padding-left: 10rem;
+    width: 83%;
+    border-bottom: 2px solid black;
+}
+
 span {
     width: 150px;
     text-align: right;
@@ -105,12 +120,6 @@ span {
 
 input {
     width: 250px;
-}
-
-form {
-    padding: 0.5em;
-    width: 600px;
-    margin-left: 5em;
 }
 
 fieldset {
@@ -243,3 +252,82 @@ td {
 }
 
 /* media rules for a small screen device */
+@media screen and (max-width: 500px) {
+    html{
+        max-width: 100%;
+    }
+    
+    body {
+        max-width: 100%;
+    }
+    
+    #left {
+        width: 50%;
+        float: left;
+    }
+    
+    #right {
+        margin-top: 140px;
+        width: 10rem;
+        height: 5rem;
+        float: right;
+    }
+    
+    #logo {
+        max-width: 10rem;
+    }
+    #titletxt {
+        float: left;
+        max-width: 200px; 
+    }
+    
+    #right {
+        margin-top: 2px;
+    }
+    
+    #contacts { 
+    float: right;
+    }
+    
+    ul {
+        margin-top: 12rem;
+        width: 97%;
+        padding: 2px;
+    }
+    
+    #walkForm {
+    padding-left: 1rem;
+    }
+    
+    fieldset {
+        height: 30rem;
+        max-width: 20rem;
+    }
+    
+    span {
+        float: left;
+        text-align: left;
+    }
+    
+    input[type="submit"] {
+        margin-top: 2rem;
+        margin-left: 1rem;
+    }
+    
+    table {
+        margin-left: 1px;
+        width: 99%;
+    }
+ 
+    #footerRight {
+        float: right;
+    }
+    
+    span.ok, span.error { 
+    float: left;
+    width: 100px;
+    opacity: 0;
+    transition: opacity 0.2s; 
+    text-align: left;
+}
+}
