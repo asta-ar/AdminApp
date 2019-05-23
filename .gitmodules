@@ -1,0 +1,3 @@
+[submodule "AdminApp"]
+	path = AdminApp
+	url = https://github.com/asta-ar/AdminApp
